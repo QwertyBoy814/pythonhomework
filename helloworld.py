@@ -107,3 +107,5 @@ class SARDog(Dog):
     def __init__(self, name):
         super().__init__(name)
 
+print("hi")
+
