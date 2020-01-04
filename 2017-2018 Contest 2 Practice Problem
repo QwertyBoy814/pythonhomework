@@ -1,0 +1,19 @@
+def findMatching(exp):
+    arr = []
+    if "(" in exp:
+        pos = exp.index("(") + 1
+        #print("left paren pos: " + str(pos))
+        for j in range(pos + 4, len(exp), 2):
+            arr.append(j)
+
+    if ")" in exp:
+        pos = exp.index(")") + 1
+        #print("right paren pos: " + str(pos))
+        for j in range(pos - 3, 0, -2):
+            arr.append(j)
+
+    print(", ".join(str(i) for i in arr))
+    return arr
+
+findMatching("5+5-2)*5")
+findMatching("2+8/4*5)")
