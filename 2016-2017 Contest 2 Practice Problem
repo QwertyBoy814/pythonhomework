@@ -1,0 +1,31 @@
+def seq(inp):
+    num_list = [inp[0]]
+    i = 1
+    while i < len(inp):
+        last_num = num_list[-1]
+        curr = inp[i]
+        if int(curr) > int(last_num):
+            num_list.append(str(curr))
+            i += 1
+        elif int(curr) < int(last_num):
+            num = str(curr)
+            print(num)
+            while int(num) < int(last_num):
+                i += 1
+                print("i: " + str(i) + ", len = " + str(len(inp)))
+                if i < len(inp):
+                    num += str(inp[i])
+                else:
+                    break
+            i += 1
+            print("num: " + num)
+            print("last_num: " + last_num)
+            if i == len(inp) + 1 and int(num) < int(last_num):
+                break
+            num_list.append(num)
+
+    num_str = " ".join(j for j in num_list)
+    print(num_str)
+
+
+seq("314159261")
