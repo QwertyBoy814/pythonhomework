@@ -1,0 +1,30 @@
+string = input("Enter a phrase under 100 characters: ")
+for cnt in range(0, 6):
+    limit1 = input("""Enter the start number, 
+comma, space,  then length from the start point, 
+negative start is from behind, 
+negative length number of letters deleted from back
+ex. 0, 10: """)
+    start_ind1 = ""
+    for j in range(0, limit1.index(",")):
+        start_ind1 += limit1[j]
+    # print(start_ind1)
+
+    len1 = ""
+    for j in range(limit1.index(" ") + 1, len(limit1)):
+        len1 += limit1[j]
+    # print(len1)
+
+    start1 = int(start_ind1) + 1
+    # print(start1)
+    length1 = int(len1) + int(start_ind1)
+    str1 = string[int(start_ind1)]
+
+    if abs(int(len1)) == int(len1) and int(len1) != 0:
+        for j in range(start1, length1):
+            str1 += string[j]
+    else:
+        for j in range(len(string) + start1, len(string) + int(len1)):
+            str1 += string[j]
+        # print(len(string) + int(len1))
+    print(str1)
